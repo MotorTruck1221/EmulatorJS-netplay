@@ -1,17 +1,18 @@
-const express = require('express');
-const http = require('http');
+import express from 'express';
+import http from 'http';
 //const https = require('https');
-const path = require('path');
-const killable = require('killable');
-let config;
+import path from 'node:path';
+import killable from 'killable';
+import Twilio from 'twilio';
+import { Server } from "socket.io";
+const __dirname = path.resolve();
+import config from './config.json' assert { type: 'json' };
 if (process.env.NP_PASSWORD) {
     config = {
         "passwordforserver" : process.env.NP_PASSWORD
     }
-} else {
-    config = require('./config.json');
 }
-const Room = require('./room.js');
+import Room from './room.js'
 let nofusers = 0;
 
 let window;
@@ -23,7 +24,7 @@ let cachedToken = null;
 let getNewToken;
 
 if (config.TWILIO_ACCOUNT_SID) {
-    const twilio = require('twilio')(config.TWILIO_ACCOUNT_SID || "", config.TWILIO_AUTH_TOKEN || "");
+    const twilio = Twilio(config.TWILIO_ACCOUNT_SID || "", config.TWILIO_AUTH_TOKEN || "");
     getNewToken = function() {
         twilio.tokens.create({}, function(err, token) {
             if (!err && token) {
@@ -186,7 +187,7 @@ function makeServer(port, startIO) {
             }
             res.end(JSON.stringify(rv));
         })
-        const io = require("socket.io")(server, {
+        const io = new Server(server, {
             cors: {
                 origin: "*",
                 methods: ["GET", "POST"],
