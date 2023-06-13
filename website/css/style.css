@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+    background: #666;
+}
+
+#header {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 80px;
+}
+#header > h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: left;
+}
+#header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 0;
+    margin-right: 10px;
+    float: right;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    #header h1 {
+        float: none;
+        margin: 0 auto;
+    }
+    #header img {
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+#startstoptext { 
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: left;
+    margin-left: 12px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+}
+#startstop {
+   font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: left;
+    margin-left: 12px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    /* remove the default button style */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 55px;
+    width: 90px;
+}
+#status {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: right;
+    margin-right: 3px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+}
+#nuser {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: right;
+    margin-right: 12px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+}
+#urlinfo {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: right;
+    margin-right: 12px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+}
+#urls {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    float: right;
+    margin-right: 12px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    /* remove the default ul style */
+    list-style: none;
+    height: 55px;
+}
+#urls a {
+    color: #fff;
+    text-decoration: none;
+}
+#urls a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+#license {
+    /* this is a footer */
+    background: #333;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 80px;
+    clear: both;
+}
+#license > p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+    /* place next to each other */
+    display: inline-block;
+    margin-left: 10px;
+    color: #fff;
+}
+#license > p > a {
+    color: #fff;
+    text-decoration: none;
+}
+#license > p > a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
